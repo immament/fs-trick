@@ -1,0 +1,30 @@
+{
+  "name": "FsTrick",
+  "description": "Footstar Browser Extension",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "action": {
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/fs-content.js"],
+      "matches": [
+        "https://footstar.org/match/relatorio.asp*",
+        "https://www.footstar.org/match/relatorio.asp*"
+      ]
+    },
+    {
+      "js": ["scripts/viewer-content.js"],
+      "matches": [
+        "https://immament.github.io/football-match-viewer/*",
+        "http://localhost:5173/*"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "scripts/background.js",
+    "type": "module"
+  },
+  "permissions": ["activeTab", "scripting", "tabs"]
+}

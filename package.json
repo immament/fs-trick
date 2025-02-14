@@ -1,0 +1,7 @@
+{
+  "name": "fs-trick",
+  "version": "0.0.1",
+  "dependencies": {
+    "chrome-types": "^0.1.338"
+  }
+}
