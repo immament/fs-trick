@@ -1,0 +1,2 @@
+FsTrick does not collect or store your personal data on our server. 
+App only use data of already played footstar matches, which are public and available to all footstar users, to enable 3d viewer functionality.
