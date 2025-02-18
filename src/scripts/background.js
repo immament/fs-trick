@@ -32,7 +32,7 @@ async function sendMatchData(viewerTab, matchData, retryCount = 0) {
     console.log("sendMatchData response", response);
     success = response.result === "success";
   } catch (err) {
-    console.warn("send message to viewer problem", err);
+    console.warn("send message to viewer problem", viewerTab["id"], err);
   }
 
   if (!success & (retryCount < 4)) {

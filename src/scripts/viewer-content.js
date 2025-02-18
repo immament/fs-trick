@@ -1,6 +1,6 @@
 "use strict";
 
-console.log("viewer content");
+console.log("viewer content script");
 
 let matchViewerReady = false;
 
@@ -10,9 +10,12 @@ chrome.runtime.onMessage.addListener(function (message, _sender, sendResponse) {
 
     sendResponse({ result: "success" });
 
-    const event = new CustomEvent("matchDataForViewer", {
-      detail: message.data,
-    });
+    const detail =
+      typeof cloneInto === "function"
+        ? cloneInto(message.data, document)
+        : message.data;
+
+    const event = new CustomEvent("matchDataForViewer", { detail });
     sendToMatchViewer(event);
   }
 });

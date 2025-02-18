@@ -1,9 +1,10 @@
 {
   "name": "fs-trick",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "Footstar Browser Extension. Allows you to watch matches from the footstar.org browser game in 3D viewer.",
   "scripts": {
-    "create-ext": "node scripts/create-ext.mjs"
+    "create-ext:firefox": "node scripts/create-ext-firefox.mjs",
+    "create-ext:chrome": "node scripts/create-ext-chrome.mjs"
   },
   "repository": {
     "type": "git",
