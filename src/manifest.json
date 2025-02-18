@@ -1,7 +1,7 @@
 {
   "name": "FsTrick",
   "description": "Footstar Browser Extension. Allows you to watch matches from the footstar.org browser game in 3D viewer.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "manifest_version": 3,
   "action": {
     "default_icon": "icon.128.png"

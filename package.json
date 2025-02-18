@@ -1,7 +1,28 @@
 {
   "name": "fs-trick",
-  "version": "0.0.2",
-  "dependencies": {
+  "version": "0.0.3",
+  "description": "Footstar Browser Extension. Allows you to watch matches from the footstar.org browser game in 3D viewer.",
+  "scripts": {
+    "create-ext": "node scripts/create-ext.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/immament/fs-trick"
+  },
+  "keywords": [
+    "Footstar",
+    "Football",
+    "chrome",
+    "extension"
+  ],
+  "author": "immament",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/immament/fs-trick/issues"
+  },
+  "homepage": "https://github.com/immament/fs-trick",
+  "devDependencies": {
+    "archiver": "^7.0.1",
     "chrome-types": "^0.1.338"
   }
 }

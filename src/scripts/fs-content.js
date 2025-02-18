@@ -9,7 +9,10 @@ function apply() {
     setTimeout(() => apply(), 500);
     return;
   }
-
+  if (!document.querySelector("#header-main > .navbar-top")) {
+    console.log("Warn: Not logged in");
+    return;
+  }
   // main component
   const component = document.createElement("div");
   component.className = "mt-1";
@@ -56,12 +59,21 @@ async function openFootballViewer() {
 function getMatchIdFromUrl() {
   const [baseUrl, params] = location.href.split("?");
   const urlParams = new URLSearchParams(params);
-  console.log("jogo", urlParams.get("jogo_id")?.replaceAll("#", ""));
-  const fsDomain = baseUrl.includes("www") ? "www." : "" + "footstar.org";
+  const fsDomain = getFsDomain(baseUrl);
+  console.log(
+    "matchId:",
+    urlParams.get("jogo_id")?.replaceAll("#", ""),
+    fsDomain
+  );
+
   return {
     matchId: Number(urlParams.get("jogo_id")?.replaceAll("#", "")),
     fsDomain,
   };
+}
+
+function getFsDomain(baseUrl) {
+  return (baseUrl.includes("www") ? "www." : "") + "footstar.org";
 }
 
 async function loadMatchData(fsDomain, matchId) {
